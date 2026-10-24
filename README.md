@@ -2,7 +2,9 @@
 
 **📖 Project Overview**
 
-This repository serves as documentation and Infrastructure as Code (IaC) for my personal HomeLab media server. The goal of this project was to design, deploy, and optimize a cost-effective, headless server capable of automated media management, hardware-accelerated video transcoding, and secure remote access for external users.
+This repository serves as documentation and Infrastructure as Code (IaC) for my personal HomeLab media server. The goal of this project was to design, deploy, and optimize a cost-effective, headless server capable of automated media management, hardware-accelerated video transcoding, and secure remote access for external users. 
+
+The server currently supports concurrent remote streams for users across **Southeast Asia (Indonesia, Philippines), East Asia (South Korea), and North America (USA)**, demonstrating real-world application of international network routing and bandwidth management.
 
 This project demonstrates practical experience in Linux administration, Docker containerization, network security, and hardware resource allocation.
 
