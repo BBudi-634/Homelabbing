@@ -29,7 +29,7 @@ This project demonstrates practical experience in Linux administration, Docker c
 
 - **Hardware Acceleration Pass-through**: Configured Docker to pass the host's integrated Intel GPU (/dev/dri) to the Jellyfin container. This enabled Intel QuickSync, allowing the server to transcode 1080p video at 270+ frames per second, eliminating buffering for remote users without overloading the CPU.
 
-- **Zero-Trust Remote Networking**: Implemented a Tailscale VPN mesh network to provide secure, end-to-end encrypted remote access. This bypassed the need for insecure port forwarding on the home router, ensuring the network remains invisible to external scans.
+- **Zero-Trust Remote Networking**: Implemented a Tailscale VPN mesh network to provide secure, end-to-end encrypted remote access for an **international user base (USA, South Korea, Philippines, Indonesia)**. This bypassed the need for insecure port forwarding on the home router, ensuring the network remains invisible to external scans while providing low-latency routing across continents.
 
 - **Storage & Permission Migration**: Migrated legacy storage from exFAT (which lacks native Linux permission support) to ext4. Resolved complex UID/GID mapping issues to ensure Docker containers could read and write to the host drives seamlessly.
 
@@ -55,6 +55,12 @@ This project demonstrates practical experience in Linux administration, Docker c
 - **Issue**: Sonarr and Radarr were downloading files but failing to import them to the media library.
 
 - **Resolution**: Corrected the Docker volume bind mounts to map the entire storage root (/media/HD-1) to /data. This ensured both the download client and the media managers saw the exact same file paths, allowing for instant hardlinking instead of slow file copies.
+
+**4. International Latency Management**
+
+- **Issue**: Users located in North America and East Asia experienced longer buffer times compared to users in Southeast Asia due to the physical distance the data packets had to travel.
+
+- **Resolution**: Configured Jellyfin user profiles with region-specific bitrate limits (10-12 Mbps) to ensure stable playback over international Tailscale routes, preventing packet loss and buffering for intercontinental users.
 
 **🔐 Security Note**
 
