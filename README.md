@@ -8,6 +8,12 @@ The server currently supports concurrent remote streams for users across **South
 
 This project demonstrates practical experience in Linux administration, Docker containerization, network security, and hardware resource allocation.
 
+## Network Topology
+
+![Homelab Network Diagram](https://github.com/BBudi-634/Homelabbing/blob/main/Homelab%20network%20diagram.drawio.png?raw=true)
+
+
+
 **🏗️ Architecture & Tech Stack**
 - **Host Hardware**: Dell OptiPlex (Intel Core i3 8th Gen, 16GB RAM)
 
