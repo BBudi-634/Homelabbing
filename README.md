@@ -78,7 +78,7 @@ This project demonstrates practical experience in Linux administration, Docker c
 - **Storage Redundancy**: Once I obtain 4 additional hard drives for a total of 5, I will then implement RAID 5 on the DAS using `mdadm` to protect against single-drive failure.
 - **Platform Migration**: Migrate from ZimaOS to bare-metal Ubuntu Server or Proxmox VE to gain deeper control over the hypervisor and kernel networking.
 - **Secondary Node**: Deploy a second OptiPlex as a dedicated Proxmox lab node for testing Home Assistant and other containerized services.
-- **server-cluster**: Establish a server cluster for improved processing power. Allowing the server to cater to more users.
+- **Server-Cluster**: Establish a server cluster for improved processing power. Allowing the server to cater to more users.
 
 **🔐 Security Note**
 
