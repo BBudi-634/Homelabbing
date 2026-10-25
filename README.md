@@ -48,7 +48,7 @@ This project demonstrates practical experience in Linux administration, Docker c
 **1. The Transcoding Bottleneck**
 - **Issue**: Remote streams were buffering heavily. Jellyfin logs showed software transcoding was running at only 18fps.
 
-- **Resolution**: Diagnosed the issue as a missing hardware device mapping in the Docker Compose file. Added the /dev/dri device to the Jellyfin service and enabled Intel QSV in the settings, instantly resolving the CPU bottleneck
+- **Resolution**: Diagnosed the issue as a missing hardware device mapping in the Docker Compose file. Added the /dev/dri device to the Jellyfin service and enabled Intel QSV in the settings, instantly resolving the CPU bottleneck.
 
 **2. The File System Permission Trap**
 
@@ -67,6 +67,18 @@ This project demonstrates practical experience in Linux administration, Docker c
 - **Issue**: Users located in North America and East Asia experienced longer buffer times compared to users in Southeast Asia due to the physical distance the data packets had to travel.
 
 - **Resolution**: Configured Jellyfin user profiles with region-specific bitrate limits (10-12 Mbps) to ensure stable playback over international Tailscale routes, preventing packet loss and buffering for intercontinental users.
+
+**5. User Requests & Subtitle Automation**
+
+- **Issue**: Users had no easy way to request new movies or TV shows, and media imported without English subtitles required manual intervention.
+  
+- **Resolution**: Deployed Seerr to provide a user-friendly request portal connected directly to Sonarr/Radarr. Additionally, configured Bazarr to monitor the media library and automatically fetch missing English subtitles.
+
+**🗺️ Future Roadmap**
+- **Storage Redundancy**: Once I obtain 4 additional hard drives for a total of 5, I will then implement RAID 5 on the DAS using `mdadm` to protect against single-drive failure.
+- **Platform Migration**: Migrate from ZimaOS to bare-metal Ubuntu Server or Proxmox VE to gain deeper control over the hypervisor and kernel networking.
+- **Secondary Node**: Deploy a second OptiPlex as a dedicated Proxmox lab node for testing Home Assistant and other containerized services.
+- **server-cluster**: Establish a server cluster for improved processing power. Allowing the server to cater to more users.
 
 **🔐 Security Note**
 
